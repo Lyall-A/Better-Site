@@ -14,8 +14,15 @@ body {
     justify-content: center;
 }
 
-.images img {
+.images img, .games iframe {
     margin: 25px;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 a {

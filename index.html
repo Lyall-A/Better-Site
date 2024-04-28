@@ -20,8 +20,8 @@
             <div style="background-image: url('/assets/blood.gif'); background-repeat: repeat-x; height: 20px;"></div>
         </div>
         <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-            <img src='https://www.free-website-hit-counter.com/c.php?d=9&id=167323&s=32'>
-            Website visits
+            <img alt="Website visit counter" src='https://www.free-website-hit-counter.com/c.php?d=9&id=167323&s=32'>
+            <div>Website visits</div>
         </div>
 
         <div class="images">
@@ -33,7 +33,8 @@
             <img src="/assets/ad6.gif">
             <img src="/assets/ad7.gif">
         </div>
-        Hi this is my website i hope you enjoy your stay
+        <div>Hi this is my website i hope you enjoy your stay</div>
+        <div>CLICK TO HEAR COOL MUSIC!</div>
         <h1>cool gifs</h1>
         <div class="images">
             <img src="/assets/palmplayer.gif">
@@ -54,6 +55,25 @@
             <a href="https://jellyseerr.lyall.cam">jellyseerr</a>
         </div>
     </div>
+
+    <script>
+        let hasInteracted = false;
+        document.onclick = () => !hasInteracted ? interaction() : null;
+        document.onkeydown = () => !hasInteracted ? interaction() : null;
+
+        function interaction() {
+            hasInteracted = true;
+            playMusic();
+        };
+
+        function playMusic() {
+            hasInteracted = true;
+            const audio = new Audio(`/assets/music${Math.floor(Math.random() * 4) + 1}.mp3`);
+            audio.volume = 0.2;
+            audio.play();
+            audio.onended = () => playMusic();
+        }
+    </script>
 </body>
 
 </html>

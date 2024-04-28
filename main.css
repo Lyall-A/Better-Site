@@ -1,0 +1,28 @@
+body {
+    background-color: aqua;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.images img {
+    margin: 25px;
+}
+
+a {
+    margin: 50px;
+}
+
+* {
+    font-family: Arial;
+    max-width: 100%;
+}

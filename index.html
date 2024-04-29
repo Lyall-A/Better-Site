@@ -9,13 +9,15 @@
     <meta property="og:url" content="https://site.lyall.cam">
     <meta property="og:description" content="MY COOL WEBSITE">
     <link rel="stylesheet" href="/main.css">
+    <script src="/games.js"></script>
+    <script defer src="/main.js"></script>
     <title>LYALLS AWESOME WEBSITE!</title>
 </head>
 
 <body>
     <div class="content">
         <div class="header">
-            <div style="background-image: url('/assets/stars.gif'); background-repeat: repeat-x; height: 150px;"></div>
+            <div style="background-image: url('/assets/stars.gif'); background-repeat: repeat-x; height: 20vw; max-height: 150px;"></div>
             <img src="/assets/header.gif">
             <div style="background-image: url('/assets/blood.gif'); background-repeat: repeat-x; height: 20px;"></div>
         </div>
@@ -54,33 +56,9 @@
             <a href="https://jellyfin-vue.lyall.cam">jellyfin vue</a>
             <a href="https://jellyseerr.lyall.cam">jellyseerr</a>
         </div>
-        <h1>KOOL GAMES</h1>
-        <div class="centered-content games">
-            <script src="https://cdn.htmlgames.com/embed.js?game=Tetrix"></script>
-            <script src="https://cdn.htmlgames.com/embed.js?game=TrafficRacer2"></script>
-            <script src="https://cdn.htmlgames.com/embed.js?game=HarbourEscape"></script>
-            <script src="https://cdn.htmlgames.com/embed.js?game=BubbleBubble"></script>
-        </div>
+        <h1 style="cursor: pointer;" onclick="showGames()">CLICK FOR KOOL GAMES</>
+        <div id="games" class="centered-content"></div>
     </div>
-    
-    <script>
-        let hasInteracted = false;
-        document.onclick = () => !hasInteracted ? interaction() : null;
-        document.onkeydown = () => !hasInteracted ? interaction() : null;
-
-        function interaction() {
-            hasInteracted = true;
-            playMusic();
-        };
-
-        function playMusic() {
-            hasInteracted = true;
-            const audio = new Audio(`/assets/music${Math.floor(Math.random() * 4) + 1}.mp3`);
-            audio.volume = 0.2;
-            audio.play();
-            audio.onended = () => playMusic();
-        }
-    </script>
 </body>
 
 </html>

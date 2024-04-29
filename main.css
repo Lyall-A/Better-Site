@@ -14,7 +14,7 @@ body {
     justify-content: center;
 }
 
-.images img, .games iframe {
+.images img, #games iframe {
     margin: 25px;
 }
 
@@ -25,11 +25,18 @@ body {
     justify-content: center;
 }
 
+#games iframe {
+    width: 800px;
+    height: 480px;
+    border-style: none;
+}
+
 a {
     margin: 50px;
 }
 
 * {
     font-family: Arial;
+    text-align: center;
     max-width: 100%;
 }

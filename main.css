@@ -16,6 +16,7 @@ body {
 
 .images img, #games iframe {
     margin: 25px;
+    height: 100px;
 }
 
 .centered-content {

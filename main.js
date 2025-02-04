@@ -9,7 +9,7 @@ function interaction() {
 
 function playMusic() {
     hasInteracted = true;
-    const audio = new Audio(`/assets/music${Math.floor(Math.random() * 4) + 1}.mp3`);
+    const audio = new Audio(`/assets/music${Math.floor(Math.random() * 5) + 1}.mp3`);
     audio.volume = 0.2;
     audio.play();
     audio.onended = () => playMusic();

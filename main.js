@@ -1,27 +1,46 @@
-let hasInteracted = false;
-document.onclick = () => !hasInteracted ? interaction() : null;
-document.onkeydown = () => !hasInteracted ? interaction() : null;
+let audio = null;
+const musicVolume = 20;
+const songs = [
+    "/assets/music1.mp3",
+    "/assets/music2.mp3",
+    "/assets/music3.mp3",
+    "/assets/music4.mp3",
+    "/assets/music5.mp3",
+];
 
-function interaction() {
-    hasInteracted = true;
-    playMusic();
+function playRandomSong() {
+    audio = new Audio(songs[Math.floor(Math.random() * songs.length)]);
+    // audio.playbackRate = 10;
+    audio.volume = musicVolume / 100;
+    audio.addEventListener("canplaythrough", () => audio.play());
+    audio.addEventListener("ended", () => playRandomSong());
+}
+
+// document.addEventListener("firstinteraction", () => {
+//     playRandomSong();
+// });
+
+function toggleMusic() {
+    if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.src = "";
+        audio.load();
+        audio = null;
+    } else {
+        playRandomSong();
+    }
 };
 
-function playMusic() {
-    hasInteracted = true;
-    const audio = new Audio(`/assets/music${Math.floor(Math.random() * 5) + 1}.mp3`);
-    audio.volume = 0.2;
-    audio.play();
-    audio.onended = () => playMusic();
-}
-
-function showGames() {
-    const gamesDiv = document.getElementById("games");
-    if (gamesDiv.innerHTML) return;
-    
-    games.forEach(gameName => {
-        const gameScript = document.createElement("iframe");
-        gameScript.src = `https://cdn.htmlgames.com/${gameName}`;
-        gamesDiv.appendChild(gameScript);
-    });
-}
+// Capture first interaction
+// const firstinteractionEvent = new Event("firstinteraction");
+// const clickListener = document.addEventListener("click", () => {
+//     document.removeEventListener("click", clickListener);
+//     document.removeEventListener("keydown", keydownListener);
+//     document.dispatchEvent(firstinteractionEvent);
+// });
+// const keydownListener = document.addEventListener("keydown", () => {
+//     document.removeEventListener("click", clickListener);
+//     document.removeEventListener("keydown", keydownListener);
+//     document.dispatchEvent(firstinteractionEvent);
+// });

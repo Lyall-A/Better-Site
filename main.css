@@ -16,7 +16,27 @@ body {
     flex: 1;
 }
 
-.header a {
+.header-top, .header-bottom {
+    background-repeat: repeat;
+}
+
+.header-top {
+    background-image: url('/assets/stars.gif');
+    height: 20vw;
+    min-height: 50px;
+    max-height: 150px;
+}
+
+.header-bottom {
+    background-image: url('/assets/blood.gif');
+    height: 20px;
+}
+
+.header-image {
+    width: 100%;
+}
+
+.header-links a {
     margin: 1em;
     font-size: large;
 }
@@ -44,3 +64,10 @@ body {
 footer {
     margin-top: 2em;
 }
+
+@media (max-width: 800px) {
+    .banner {
+        display: none;
+    }
+}
+  

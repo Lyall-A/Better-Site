@@ -10,15 +10,10 @@ const songs = [
 
 function playRandomSong() {
     audio = new Audio(songs[Math.floor(Math.random() * songs.length)]);
-    // audio.playbackRate = 10;
     audio.volume = musicVolume / 100;
     audio.addEventListener("canplaythrough", () => audio.play());
     audio.addEventListener("ended", () => playRandomSong());
 }
-
-// document.addEventListener("firstinteraction", () => {
-//     playRandomSong();
-// });
 
 function toggleMusic() {
     if (audio) {
@@ -32,15 +27,6 @@ function toggleMusic() {
     }
 };
 
-// Capture first interaction
-// const firstinteractionEvent = new Event("firstinteraction");
-// const clickListener = document.addEventListener("click", () => {
-//     document.removeEventListener("click", clickListener);
-//     document.removeEventListener("keydown", keydownListener);
-//     document.dispatchEvent(firstinteractionEvent);
-// });
-// const keydownListener = document.addEventListener("keydown", () => {
-//     document.removeEventListener("click", clickListener);
-//     document.removeEventListener("keydown", keydownListener);
-//     document.dispatchEvent(firstinteractionEvent);
-// });
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".music-button").style.display = "block";
+});

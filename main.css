@@ -16,10 +16,6 @@ body {
     flex: 1;
 }
 
-.header {
-    margin: 20px;
-}
-
 .header a {
     margin: 1em;
     font-size: large;
@@ -31,6 +27,12 @@ body {
     align-items: center;
 }
 
+.music-button {
+    cursor: pointer;
+    width: 150px;
+    display: none;
+}
+
 .links a {
     margin: 1em;
 }
@@ -38,4 +40,8 @@ body {
 .ads img, .gifs img {
     margin: 1em;
     height: 100px;
+}
+
+footer {
+    margin-top: 2em;
 }

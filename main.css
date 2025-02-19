@@ -5,6 +5,19 @@ body {
     margin: 10px;
 }
 
+.loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading h1 {
+    background-color: blue;
+    padding: 20px;
+}
+
 .container {
     display: flex;
 }

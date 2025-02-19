@@ -29,4 +29,9 @@ function toggleMusic() {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".music-button").style.display = "block";
+    document.querySelector(".loading").style.display = "block";
+});
+
+window.addEventListener("load", () => {
+    document.querySelector(".loading").style.display = "none";
 });

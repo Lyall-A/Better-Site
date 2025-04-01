@@ -34,14 +34,14 @@ body {
 }
 
 .header-top {
-    background-image: url('/assets/stars.gif');
+    background-image: url("/assets/stars.gif");
     height: 20vw;
     min-height: 50px;
     max-height: 150px;
 }
 
 .header-bottom {
-    background-image: url('/assets/blood.gif');
+    background-image: url("/assets/blood.gif");
     height: 20px;
 }
 
